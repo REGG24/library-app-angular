@@ -1,0 +1,17 @@
+<div class="modal-header green-light">
+    <div class="container">
+        <button type="button" class="close text-white topright" aria-label="Close"
+            (click)="activeModal.dismiss('Cross click')">x
+        </button>
+        <div class="col text-center">
+            <i class="bi bi-check-circle" style="font-size: 4rem; color: rgb(255, 255, 255);"></i> 
+        </div>  
+    </div>                
+</div>
+<div class="modal-body text-center">
+    <div class="container">
+        <strong><h2>{{ status }}</h2></strong>
+        <span>{{ message }}</span>         
+        <br><br>
+    </div>
+</div>

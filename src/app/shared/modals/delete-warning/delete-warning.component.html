@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <div class="container">
+        <button type="button" class="close text-white topright" aria-label="Close"
+            (click)="activeModal.dismiss('Cross click')">x
+        </button>
+        <div class="col text-center">
+            <i class="bi bi-x-circle" style="font-size: 4rem; color: rgb(240, 13, 13);"></i> 
+            <h2>Are you sure?</h2>
+        </div>  
+    </div>                
+</div>
+<div class="modal-body text-center">
+    <div class="container">
+        <p>Do you really want to delete this record? This process cannot be undone.</p>         
+        <br>
+        <div class="container-fluid">       
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-secondary fixed-button" (click)="onClose()">Cancel</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-danger fixed-button" (click)="onDelete()">Delete</button>
+                </div>
+            </div>                 
+        </div>
+    </div>
+</div>
+

@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+  box-shadow: 0 0 10px red;
+}
+
+input.ng-valid.ng-touched {
+  border-color: rgb(127, 211, 127);;
+  box-shadow: 0 0 10px rgb(127, 211, 127);
+}
+
+.green-light {
+  background-color: rgb(112, 228, 122);
+}
+
+.blue-light {
+  background-color: rgb(112, 211, 228);
+}
+
+.gray-light {
+  background-color:rgb(231, 227, 227);
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+}
+
+.font-table-header{
+  font-size: 1.4rem;
+  font-family: Georgia, serif;
+}
+
+td {
+  min-width: 30px;
+  max-width: 160px;
+}
+
+.fixed-button{
+  width: 100px;
+  font-size: .8rem;
+}
+
+.fixed-column {
+  margin: 0;
+  padding: 0;
+}
+
+.full-screen {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.fixed-table {
+  font-size: smaller;
+}
+
+.fixed-id-column {
+  width: 50px;
+}
+
+.fixed-phone-column {
+  width: 120px;
+}
+
+table button {
+  height: 20px;
+}
+
+table th, td {
+  text-align: center;
+}
+

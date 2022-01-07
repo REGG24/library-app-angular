@@ -1,0 +1,43 @@
+<div class="container blue-light full-height">
+  <br>
+    <h4 class="text-center text-white">Library</h4>
+    <hr>
+    <br>
+      <ul class="list-group list-group-flush">
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('employees')"
+          [class.active] = "selected === 'employees'" 
+          [routerLink]="['/employees']">Employees</button>
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('clients')"
+          [class.active] = "selected === 'clients'"  
+          [routerLink]="['/clients']">Clients</button>
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('books')"
+          [class.active] = "selected === 'books'"
+          [routerLink] = "['/books']"
+          >Books</button>
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('authors')"
+          [class.active] = "selected === 'authors'"
+          [routerLink]="['/authors']"
+          >Authors</button>
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('sales')"
+          [class.active] = "selected === 'sales'"
+          [routerLink]="['/sales']"
+          >Sales</button>
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('loans')"
+          [class.active] = "selected === 'loans'"
+          [routerLink]="['/loans']"
+          >Loans</button>
+        <button class="list-group-item text-left blue-light text-white"
+          (click)="onSelect('returns')"
+          [class.active] = "selected === 'returns'"
+          [routerLink]="['/returns']"
+          >Returns</button>
+     </ul>
+</div>
+
+

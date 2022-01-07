@@ -1,0 +1,45 @@
+<div class="modal-header blue-light text-white">
+    <div class="container">
+      <h4 class="modal-title w-100 font-table-header">New Return</h4>
+    </div>
+    <button type="button" class="close text-white topright" aria-label="Close"
+            (click)="activeModal.dismiss('Cross click')">x
+    </button>
+  </div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+    <div class="modal-body">
+      <div class="container">
+        <div class="form-group">
+          <label>Loan</label>
+          <input type="number" 
+            class="form-control"
+            formControlName="id_loan"/>
+            <div *ngIf="id_loan.invalid && id_loan.errors &&
+                        (id_loan.dirty || id_loan.touched)">
+                <small class="text-danger" *ngIf="id_loan.hasError('required')">
+                    Loan is required.
+                </small>          
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input type="string" 
+              class="form-control"
+              formControlName="date"/>
+              <div *ngIf="date.invalid && date.errors &&
+                          (date.dirty || date.touched)">
+                  <small class="text-danger" *ngIf="date.hasError('required')">
+                      Date is required.
+                  </small>          
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success"
+        [disabled]="!myForm.valid">
+        Save
+      </button>
+    </div>
+  </form>
+

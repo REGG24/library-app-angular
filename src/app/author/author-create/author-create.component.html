@@ -1,0 +1,50 @@
+<div class="modal-header blue-light text-white">
+    <div class="container">
+      <h4 class="modal-title w-100 font-table-header">New Author</h4>
+    </div>
+    <button type="button" class="close text-white topright" aria-label="Close"
+            (click)="activeModal.dismiss('Cross click')">x
+    </button>
+  </div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+    <div class="modal-body">
+      <div class="container">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="name"/>
+            <div *ngIf="name.invalid && name.errors &&
+                        (name.dirty || name.touched)">
+                <small class="text-danger" *ngIf="name.hasError('required')">
+                    Name is required.
+                </small>
+                <small class="text-danger" *ngIf="name.hasError('minlength')">
+                    The minimum length for this field is {{ name.errors.minlength.requiredLength }} characters
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Nationality</label>
+          <input type="text" 
+          class="form-control"
+          formControlName="nationality" />
+          <div *ngIf="nationality.invalid && nationality.errors &&
+                        (nationality.dirty || nationality.touched)">
+                <small class="text-danger" *ngIf="nationality.hasError('required')">
+                    Nationality is required.
+                </small>
+                <small class="text-danger" *ngIf="nationality.hasError('minlength') || nationality.hasError('maxlength')">
+                    At least {{ nationality.errors.minlength.requiredLength }} characters and maximum 50
+                </small>
+            </div>
+        </div>      
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success"
+        [disabled]="!myForm.valid">
+        Save
+      </button>
+    </div>
+  </form>

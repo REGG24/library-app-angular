@@ -1,0 +1,75 @@
+<div class="modal-header blue-light text-white">
+    <div class="container">
+      <h4 class="modal-title w-100 font-table-header">Loan details</h4>
+    </div>
+    <button type="button" class="close text-white topright" aria-label="Close"
+            (click)="activeModal.dismiss('Cross click')">x
+    </button>
+  </div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+    <div class="modal-body">
+      <div class="container">
+        <div class="form-group">
+          <label>Book</label>
+          <input type="number" 
+            class="form-control"
+            formControlName="id_book"
+            [ngModel]="loan.id_book" />
+            <div *ngIf="id_book.invalid && id_book.errors &&
+                        (id_book.dirty || id_book.touched)">
+                <small class="text-danger" *ngIf="id_book.hasError('required')">
+                    Book is required.
+                </small>           
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Employee</label>
+            <input type="number" 
+              class="form-control"
+              formControlName="id_employee"
+              [ngModel]="loan.id_employee"/>
+              <div *ngIf="id_employee.invalid && id_employee.errors &&
+                          (id_employee.dirty || id_employee.touched)">
+                  <small class="text-danger" *ngIf="id_employee.hasError('required')">
+                      Employee is required.
+                  </small>           
+              </div>
+          </div>
+          <div class="form-group">
+            <label>Client</label>
+            <input type="number" 
+              class="form-control"
+              formControlName="id_client"
+              [ngModel]="loan.id_client"/>
+              <div *ngIf="id_client.invalid && id_client.errors &&
+                          (id_client.dirty || id_client.touched)">
+                  <small class="text-danger" *ngIf="id_client.hasError('required')">
+                      Client is required.
+                  </small>           
+              </div>
+          </div> 
+          <div class="form-group">
+            <label>Date</label>
+            <input type="text" 
+              class="form-control"
+              formControlName="date"
+              [ngModel]="loan.date"/>
+              <div *ngIf="date.invalid && date.errors &&
+                          (date.dirty || date.touched)">
+                  <small class="text-danger" *ngIf="date.hasError('required')">
+                      Date is required.
+                  </small>           
+              </div>
+          </div>    
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success"
+        [disabled]="!myForm.valid">
+        Save
+      </button>
+    </div>
+  </form>
+
+
+
